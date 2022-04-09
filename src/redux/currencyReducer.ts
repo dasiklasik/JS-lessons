@@ -46,7 +46,9 @@ export const currencyReducer = (state: CurrencyState = initialState, action: Cur
             return copyState
         }
         case ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE: {
-            return state
+            let copyState = {...state}
+
+            return {...copyState, amountOfBYN: action.amountOfBYN, amountOfCurrency: action.amountOfCurrency}
         }
         case ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY: {
             let copyState = {...state}
